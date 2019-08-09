@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="projections_names" translatable="false">
+        <item>Pseudo Mercator</item>
+        <item>Universal Transverse Mercator</item>
+        <item>@string/projection_none</item>
+    </string-array>
+
+    <string-array name="calibration_points_numbers" translatable="false">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="empty" translatable="false"></string-array>
+
+    <string-array name="starton_options">
+        <item>@string/preference_starton_maplist</item>
+        <item>@string/preference_starton_lastmap</item>
+    </string-array>
+</resources>

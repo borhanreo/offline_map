@@ -1,0 +1,215 @@
+<resources>
+    <string name="app_name" translatable="false">TrekMe</string>
+    <string name="app_author" translatable="false">View on GitHub</string>
+    <string name="general_help_link"><a href="https://github.com/peterLaurence/TrekMe/blob/master/doc/troubleshoot/troubleshoot.fr.md#que-faire-si">Need help?</a></string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+
+    <string name="map_menu_title">Map</string>
+    <string name="select_map_menu_title">My maps</string>
+    <string name="create_menu_title">Create</string>
+    <string name="record_menu_title">Gpx Record</string>
+    <string name="track_stats_menu_title">Recording stats</string>
+    <string name="import_menu_title">Import a map</string>
+    <string name="settings_menu_title">Settings</string>
+    <string name="help">Help</string>
+    <string name="help_url">https://github.com/peterLaurence/TrekMe/blob/master/Readme.md</string>
+    <string name="confirm_exit">Click BACK again to exit</string>
+    <string name="no_internet">You must be connected to internet to create a map</string>
+    <string name="warning_title">Warning</string>
+    <string name="bad_storage_status">There is something wrong with your SD card: we can\'t write to it.\nThis has nothing to do with TrekMe, and it won\'t be able to download maps or save changes.</string>
+    <string name="storage_read_only">Your SD card is only accessible as read-only. This means we can\'t write to it and TrekMe won\'t be able to download maps or save changes.</string>
+
+    <!-- LocationService -->
+    <string name="service_location_name">Location service</string>
+    <string name="service_location_action">GPX recording</string>
+
+    <!-- DownloadService -->
+    <string name="service_download_name">Download service</string>
+    <string name="service_download_action">Map download</string>
+    <string name="service_download_finished">Map download finished</string>
+    <string name="service_download_stop">Stop</string>
+    <string name="service_download_bad_storage">TrekMe can\'t write to your internal storage or your SD card. It can be a permission issue. Please check that all permissions of TrekMe are granted, and reboot your phone, if necessary.</string>
+
+    <!-- MapDownloadDialog -->
+    <string name="map_download_dialog_title">Current map download</string>
+    <string name="map_download_dialog_progress">Progress</string>
+    <string name="map_download_dialog_error">An error occurred during map import. The map is most probably not visible or not calibrated.\nTry to download it again.</string>
+
+    <!-- Map list fragment -->
+    <string name="no_maps_found_warning">You haven\'t created any map yet</string>
+    <string name="go_to_map_creation_btn">Create a map</string>
+    <string name="ok_dialog">OK</string>
+    <string name="delete_dialog">Delete</string>
+    <string name="map_manage_btn_string">Manage</string>
+    <string name="download_map_dialog_title">Map download</string>
+    <string name="download_map_dialog_msg">Downloading %s…</string>
+    <string name="menu_sample_map">Download sample map</string>
+
+    <!-- Save map dialog fragment -->
+    <string name="archive_dialog_title">Save map</string>
+    <string name="archive_dialog_description">Saving a map will create an archive from it, which can be later
+        restored using the import menu.\n\nThe progress will appear in a notification.</string>
+    <string name="archive_snackbar_finished">Map successfully archived</string>
+    <string name="archive_notification_title">Archiving</string>
+    <string name="archive_notification_msg" formatted="false">Saving the map %s in progress</string>
+
+    <!-- Calibration fragment -->
+    <string name="calibration_status_ok">Calibrated</string>
+    <string name="calibration_status_none">Not calibrated</string>
+    <string name="calibration_status_error">Calibration error</string>
+    <string name="calibration_point_saved">Calibration point saved</string>
+    <string name="calibration_projection_saved_ok">Projection successfully changed</string>
+
+    <string name="image_preferences_category">Thumbnail image</string>
+    <string name="image_change_btn_txt">Change thumbnail image</string>
+    <string name="calibration_preferences_category">Calibration</string>
+    <string name="projection_preferences_title">Projection</string>
+    <string name="points_number_preferences_title">Number of calibration points</string>
+    <string name="calibration_button_txt">Define calibration points</string>
+
+    <string name="map_summary_category">Map</string>
+    <string name="map_title">Name</string>
+    <string name="map_save_string">Save</string>
+    <string name="map_delete_question">Are you sure to delete this map?</string>
+    <string name="cancel_dialog_string">Cancel</string>
+
+    <string name="projection_none">None</string>
+    <string name="wgs84_instead_of_projected">You entered WGS84 lat/lon instead of projected values</string>
+    <string name="projected_instead_of_wgs84">You entered projected values instead of WGS84 lat/lon</string>
+
+
+    <!-- Keys and ids of graphical components -->
+    <string name="preference_change_image_key" translatable="false">pref_image_preference</string>
+    <string name="preference_projection_key" translatable="false">pref_projection_preference</string>
+    <string name="preference_numpoints_key" translatable="false">pref_points_number_preference</string>
+    <string name="preference_map_title_key" translatable="false">pref_map_title_key</string>
+    <string name="preference_calibration_button_key" translatable="false">pref_calib_btn_key</string>
+    <string name="preference_save_button_key" translatable="false">pref_save_map</string>
+    <string name="calibration_enter_values">Enter values after choosing a calibration point</string>
+    <string name="wgs84_switch">WGS84 lat/lng</string>
+    <string name="latitude_short">Lat</string>
+    <string name="longitude_short">Lng</string>
+    <string name="projected_x_short">E</string>
+    <string name="projected_y_short">N</string>
+
+    <!-- Import map cardview -->
+    <string name="extraction_lbl">Extraction</string>
+    <string name="map_created_lbl">Map creation</string>
+    <string name="import_btn">Import</string>
+    <string name="imported_untouched">Imported without modification</string>
+    <string name="extraction_error">Extraction error</string>
+    <string name="snack_msg_show_map_list">Show map list?</string>
+    <string name="confirm_import">You can now import the map</string>
+    <string name="import_error">An error occurred. Try restart the app.</string>
+
+    <!-- Menu of the map view fragment -->
+    <string name="manage_tracks_menu">Manage tracks</string>
+
+    <!-- Tracks manager fragment -->
+    <string name="import_tracks_menu">Import tracks</string>
+    <string name="import_tracks_action_settings">Settings</string>
+    <string name="import_tracks_warning">The file you chose is not in a supported format. Supported extensions are :</string>
+    <string name="import_tracks_format_gpx" translatable="false">GPX (tracks, routes, waypoints)</string>
+    <string name="import_tracks_format_google" translatable="false">Google Maps directions (XML, JSON)</string>
+    <string name="track_name_change">Enter the name of the track</string>
+    <string name="track_rename_action">Rename</string>
+    <string name="track_file_name_change">File name</string>
+    <string name="import_result_title">Import result</string>
+    <string name="tracks_label">"Tracks number : "</string>
+    <string name="waypoints_label">"Waypoints number : "</string>
+    <string name="gpx_import_error_msg">Oops.. something went wrong during the import</string>
+
+    <!-- MapView fragment -->
+    <string name="mapview_show_speed">Show speed</string>
+    <string name="mapview_add_marker">Add marker</string>
+    <string name="mapview_measure_distance">Measure distance</string>
+    <string name="mapview_orientation_enable">Show orientation</string>
+    <string name="mapview_add_landmark">Add landmark</string>
+    <string name="mapview_lock_on_position">Lock on position</string>
+    <string name="callout_landmark_title">Landmark</string>
+    <string name="move_marker">Move</string>
+    <string name="delete_marker_question">Delete marker?</string>
+    <string name="km_h">km/h</string>
+    <string name="mph">mph</string>
+    <string name="km">km</string>
+    <string name="m">m</string>
+    <string name="mile">ml</string>
+    <string name="no_track_message">You haven\'t created nor imported any track yet.
+        You can import a gpx track downloaded from a website using the import button above, or you can import
+    a recording of your own using the recording menu.</string>
+
+    <!-- Marker manager fragment -->
+    <string name="marker_name_label">Name</string>
+    <string name="wgs84_label">WGS84 coordinates</string>
+    <string name="projection_label">Projected coordinates</string>
+    <string name="comment_label">Comment</string>
+    <string name="save_action">Save</string>
+    <string name="marker_changes_saved">Changes saved</string>
+    <string name="show_map_action">Show map</string>
+
+    <!-- Record GPX fragment -->
+    <string name="control_card_title">Control</string>
+    <string name="control_card_subtitle">Start or stop recording</string>
+    <string name="recordings_list_title">GPX recordings</string>
+    <string name="files_could_not_be_deleted">Some files could not be deleted</string>
+    <string name="recordings_status_title">Location service</string>
+    <string name="recording_status_description">Started/stopped status</string>
+    <string name="choose_a_map">Choose a map</string>
+    <string name="track_is_being_added">The track is being imported into the map</string>
+
+    <!-- MapCreate fragment -->
+    <string name="next_button">Next</string>
+    <string name="mapcreate_settings">Settings</string>
+    <string name="ign_user_catergory">IGN credentials</string>
+    <string name="ign_user">IGN user</string>
+    <string name="ign_pwd">IGN password</string>
+    <string name="ign_api_category">API</string>
+    <string name="ign_api_key">Key</string>
+    <string name="ign_tutorial"><u>Follow tutorial</u></string>
+    <string name="ign_help_msg">See how to get your API (french only)</string>
+    <string name="ign_help_link">https://github.com/peterLaurence/TrekMe/wiki/Tutoriel-:-obtenir-une-cl%C3%A9-IGN</string>
+    <string name="ign_warning_storage_rights">TrekMe can\'t save your credentials, because it don\'t have Storage rights. In Android parameters, for Applications, look into TrekMe\'s permissions.</string>
+    <string name="ign_warning_credentials">At least one of your credentials (user, password, API) is incorrect. You won\'t be able to download IGN maps until you fix this.</string>
+    <string name="ign_snackbar_continue">Continue to map creation?</string>
+
+    <string name="ign_source">IGN</string>
+    <string name="ign_source_description">France and its territories</string>
+    <string name="open_street_map_source" translatable="false">OpenStreetMap</string>
+    <string name="open_street_map_source_description">Free map</string>
+    <string name="usgs_map_source" translatable="false">USGS</string>
+    <string name="usgs_map_source_description" translatable="false">U.S. Geological Survey</string>
+    <string name="ign_spain_source">IGN Spain</string>
+    <string name="ign_spain_source_description" translatable="false">Instituto Geográfico Nacional</string>
+    <string name="ign_select_layer_title">Choose a layer</string>
+
+    <string name="mapcreate_define_area">Choose area</string>
+    <string name="mapcreate_define_layer">Choose layer</string>
+    <string name="wmts_settings_dialog">Map configuration</string>
+    <string name="min_zoom">Minimum zoom</string>
+    <string name="max_zoom">Maximun zoom</string>
+    <string name="total_transactions">Total transactions</string>
+    <string name="map_size">Map size</string>
+    <string name="download">Download</string>
+    <string name="download_confirm">Download started. See the status in your notifications.</string>
+    <string name="mapcreate_warning_ign">Please check your internet connection or your credentials.</string>
+    <string name="mapcreate_warning_others">Please check your internet connection. Another explanation is a temporary outage of the provider, due to an intense use.</string>
+    <string name="mapcreate_btn_nav_credentials">Fix my credentials</string>
+
+    <!-- TrackViewFragment -->
+    <string name="distance">Distance</string>
+    <string name="current_recording">Current recording</string>
+    <string name="ign_warning_help"><a href="https://github.com/peterLaurence/TrekMe/blob/master/doc/troubleshoot/troubleshoot.fr.md#TOC-ign-incorrect">Need help?</a></string>
+
+    <!-- SettingsFragment -->
+    <string name="general_category">General</string>
+    <string name="preference_starton_key" translatable="false">pref_starton</string>
+    <string name="preference_starton_title">Start TrekMe on</string>
+    <string name="preference_starton_maplist">the map list</string>
+    <string name="preference_starton_lastmap">the last map</string>
+    <string name="download_category">Download</string>
+    <string name="preference_download_location_key" translatable="false">pref_download_location</string>
+    <string name="preference_download_location_title">Download folder</string>
+
+</resources>

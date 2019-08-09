@@ -1,0 +1,54 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="PositionMarkerStyle">
+        <item name="measureDimension">60dp</item>
+        <item name="positionDimension">15dp</item>
+        <item name="orientationRadius1Dimension">18dp</item>
+        <item name="backgroundCircleDimension">28dp</item>
+        <item name="orientationAngle">40</item>
+        <item name="positionColor">@color/colorPositionMarker</item>
+        <item name="positionBackgroundColor">@color/colorPositionMarkerBg</item>
+        <item name="orientationColor">@color/colorPositionMarker</item>
+    </style>
+
+    <style name="CalibrationMarkerStyle">
+        <item name="measureDimension">100dp</item>
+        <item name="lineWidth">3dp</item>
+        <item name="sightColor">@color/colorCalibrationMarker</item>
+        <item name="sightBackgroundColor">@color/colorCalibrationMarkerBg</item>
+    </style>
+
+    <style name="DistanceMarkerStyle">
+        <item name="measureDimension">50dp</item>
+        <item name="sightBackgroundColor">@color/colorDistanceMarker</item>
+    </style>
+
+    <style name="AreaMarkerStyle">
+        <item name="measureDimension">50dp</item>
+        <item name="sightBackgroundColor">@color/colorAreaMarker</item>
+    </style>
+
+    <style name="AreaViewStyle">
+        <item name="backgroundColor">@color/colorBackgroundAreaView</item>
+        <item name="strokeColor">@color/colorStrokeAreaView</item>
+    </style>
+
+</resources>
