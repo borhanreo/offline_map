@@ -341,3 +341,4 @@ Once the download folder is changed, your next map download will use it. But exi
 Download map
 http://download.geofabrik.de/asia.html
 https://github.com/johnjohndoe/OSMDroidOfflineDemo
+https://github.com/johnjohndoe/OSMDroidOfflineDemo.git
