@@ -21,6 +21,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.speech.tts.TextToSpeech;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -34,6 +35,7 @@ import com.peterlaurence.trekme.service.UsbService;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.lang.ref.WeakReference;
 import java.util.Locale;
 import java.util.Set;
@@ -174,5 +176,36 @@ public class ReceiveRfData {
                     break;
             }
         }
+        private String encodeString(String s) {
+            byte[] data = new byte[0];
+
+            try {
+                data = s.getBytes("UTF-8");
+
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } finally {
+                String base64Encoded = Base64.encodeToString(data, Base64.DEFAULT);
+
+                return base64Encoded;
+
+            }
+        }
+        private String decodeString(String encoded) {
+            byte[] dataDec = Base64.decode(encoded, Base64.DEFAULT);
+            String decodedString = "";
+            try {
+
+                decodedString = new String(dataDec, "UTF-8");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+
+            } finally {
+
+                return decodedString;
+            }
+        }
     }
+
+
 }
