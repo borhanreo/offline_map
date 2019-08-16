@@ -4,10 +4,12 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.mas.w3rfcommunication.MessageReceivedCallbackListener
 import com.peterlaurence.mapview.MapView
 import com.peterlaurence.mapview.MapViewConfiguration
 import com.peterlaurence.mapview.markers.*
@@ -29,6 +31,7 @@ import com.peterlaurence.trekme.viewmodel.mapview.InMapRecordingViewModel
 import kotlinx.coroutines.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
+import org.json.JSONObject
 import java.util.*
 import kotlin.coroutines.CoroutineContext
 
@@ -55,7 +58,7 @@ class MapViewFragment : Fragment(), FrameLayoutMapView.PositionTouchListener, Co
     private lateinit var landmarkLayer: LandmarkLayer
     private lateinit var speedListener: SpeedListener
     private lateinit var distanceListener: DistanceLayer.DistanceListener
-
+    //private lateinit var context: Context
     private lateinit var inMapRecordingViewModel: InMapRecordingViewModel
 
     private lateinit var job: Job
@@ -241,7 +244,12 @@ class MapViewFragment : Fragment(), FrameLayoutMapView.PositionTouchListener, Co
         super.onResume()
 
         startLocationUpdates()
-        ReceiveRfData(activity,context).enable()
+
+        ReceiveRfData(activity,context,MessageReceivedCallbackListener {jsonObject: JSONObject? ->
+            val myToast = Toast.makeText(this.context,"toast message with gravity"+jsonObject.toString(),Toast.LENGTH_SHORT)
+            myToast.setGravity(Gravity.LEFT,200,200)
+            myToast.show()
+        }).enable()
     }
 
     private fun startLocationUpdates() {

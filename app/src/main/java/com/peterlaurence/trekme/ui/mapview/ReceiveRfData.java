@@ -29,8 +29,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mas.w3rfcommunication.MessageReceivedCallbackListener;
 import com.peterlaurence.trekme.MainActivity;
 import com.peterlaurence.trekme.service.UsbService;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -53,10 +57,11 @@ public class ReceiveRfData {
     private CheckBox box9600, box38400;
     private MyHandler mHandler;
     private String TAG= "Borhan ReceiveRFData";
-
-    public ReceiveRfData(Activity activity, Context context){
+    private MessageReceivedCallbackListener messageReceivedCallbackListener;
+    public ReceiveRfData(Activity activity, Context context, MessageReceivedCallbackListener messageReceivedCallbackListener){
         this.activity=activity;
         this.context=context;
+        this.messageReceivedCallbackListener=messageReceivedCallbackListener;
     }
     private final ServiceConnection usbConnection = new ServiceConnection() {
         @Override
@@ -71,7 +76,7 @@ public class ReceiveRfData {
         }
     };
     public void enable(){
-        mHandler = new MyHandler((MainActivity) activity,context);
+        mHandler = new MyHandler((MainActivity) activity,context,messageReceivedCallbackListener);
         startService(UsbService.class, usbConnection, null); // Start UsbService(if it was not started before) and Bind it
         setFilters();
     }
@@ -139,11 +144,13 @@ public class ReceiveRfData {
     public static class MyHandler extends Handler {
         private final WeakReference<MainActivity> mActivity;
         private Context mContext;
+        public MessageReceivedCallbackListener messageReceivedCallbackListener;
 
 
-        public MyHandler(MainActivity activity,Context context) {
+        public MyHandler(MainActivity activity,Context context, MessageReceivedCallbackListener messageReceivedCallbackListenerI) {
             mActivity = new WeakReference<>(activity);
             mContext = context;
+            messageReceivedCallbackListener = messageReceivedCallbackListenerI;
         }
 
         @Override
@@ -170,6 +177,11 @@ public class ReceiveRfData {
                     String buffer = (String) msg.obj;
                     Log.d("SendData3", buffer);
                     Toast.makeText(mContext,buffer,Toast.LENGTH_SHORT).show();
+                    try {
+                        messageReceivedCallbackListener.back(jsonResult());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                     //mActivity.get().display.append(buffer);
                     //Toast.makeText(mContext, buffer.toString(), Toast.LENGTH_LONG).show();
                     //mRfCalbackListener.back(buffer);
@@ -204,6 +216,15 @@ public class ReceiveRfData {
 
                 return decodedString;
             }
+        }
+
+        private JSONObject jsonResult() throws JSONException {
+            JSONObject json = null;
+            json = new JSONObject("{\"" + "u" + "\":" + "\"" + "g" + "\"" + ","
+                    + "\"" + "001" + "\":" + "\"" + "21.4765786" + "\"" + ","
+                    + "\"" + "002" + "\":" + "89.456565" + "," + "\""
+                    + "abc" + "\":" + "\"" + "borhan" + "\"" + "}");
+            return json;
         }
     }
 
